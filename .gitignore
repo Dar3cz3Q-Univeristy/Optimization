@@ -1,13 +1,12 @@
 # CMake Files
 CMakeLists.txt
 *.cmake
+cmake-*/
 
 # Directories
 .vs/
 .idea/
-cmake-build-debug/
 Binaries/
-Numerical methods - Runtime/Res
 
 # Files
 *.vcxproj
