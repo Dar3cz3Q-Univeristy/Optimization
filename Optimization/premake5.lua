@@ -2,13 +2,13 @@ project "Optimization"
    kind "ConsoleApp"
    language "C++"
    cppdialect "C++20"
-   targetdir "Binaries/%{cfg.buildcfg}"
+   targetdir ("%{_WORKING_DIR}/Binaries/" .. OutputDir .. "/%{prj.name}")
+   objdir ("%{_WORKING_DIR}/Binaries/Intermediates/" .. OutputDir .. "/%{prj.name}")
    staticruntime "off"
 
-   files { "src/**.h", "src/**.cpp" }
+   flags { "MultiProcessorCompile" }
 
-   targetdir ("../Binaries/" .. OutputDir .. "/%{prj.name}")
-   objdir ("../Binaries/Intermediates/" .. OutputDir .. "/%{prj.name}")
+   files { "src/**.h", "src/**.cpp" }
 
    filter "system:windows"
        systemversion "latest"
@@ -24,4 +24,3 @@ project "Optimization"
        runtime "Release"
        optimize "On"
        symbols "On"
-       

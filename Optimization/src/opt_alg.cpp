@@ -1,4 +1,4 @@
-#include"opt_alg.h"
+#include "opt_alg.h"
 
 solution MC(matrix(*ff)(matrix, matrix, matrix), int N, matrix lb, matrix ub, double epsilon, int Nmax, matrix ud1, matrix ud2)
 {
@@ -26,7 +26,7 @@ solution MC(matrix(*ff)(matrix, matrix, matrix), int N, matrix lb, matrix ub, do
 	}
 	catch (string ex_info)
 	{
-		throw ("solution MC(...):\n" + ex_info);
+		throw("solution MC(...):\n" + ex_info);
 	}
 }
 
@@ -34,14 +34,14 @@ double* expansion(matrix(*ff)(matrix, matrix, matrix), double x0, double d, doub
 {
 	try
 	{
-		double* p = new double[2]{ 0,0 };
-		//Tu wpisz kod funkcji
+		double* p = new double[2] { 0, 0 };
+		// Tu wpisz kod funkcji
 
 		return p;
 	}
 	catch (string ex_info)
 	{
-		throw ("double* expansion(...):\n" + ex_info);
+		throw("double* expansion(...):\n" + ex_info);
 	}
 }
 
@@ -50,15 +50,14 @@ solution fib(matrix(*ff)(matrix, matrix, matrix), double a, double b, double eps
 	try
 	{
 		solution Xopt;
-		//Tu wpisz kod funkcji
+		// Tu wpisz kod funkcji
 
 		return Xopt;
 	}
 	catch (string ex_info)
 	{
-		throw ("solution fib(...):\n" + ex_info);
+		throw("solution fib(...):\n" + ex_info);
 	}
-
 }
 
 solution lag(matrix(*ff)(matrix, matrix, matrix), double a, double b, double epsilon, double gamma, int Nmax, matrix ud1, matrix ud2)
@@ -66,13 +65,13 @@ solution lag(matrix(*ff)(matrix, matrix, matrix), double a, double b, double eps
 	try
 	{
 		solution Xopt;
-		//Tu wpisz kod funkcji
+		// Tu wpisz kod funkcji
 
 		return Xopt;
 	}
 	catch (string ex_info)
 	{
-		throw ("solution lag(...):\n" + ex_info);
+		throw("solution lag(...):\n" + ex_info);
 	}
 }
 
@@ -81,13 +80,13 @@ solution HJ(matrix(*ff)(matrix, matrix, matrix), matrix x0, double s, double alp
 	try
 	{
 		solution Xopt;
-		//Tu wpisz kod funkcji
+		// Tu wpisz kod funkcji
 
 		return Xopt;
 	}
 	catch (string ex_info)
 	{
-		throw ("solution HJ(...):\n" + ex_info);
+		throw("solution HJ(...):\n" + ex_info);
 	}
 }
 
@@ -95,13 +94,13 @@ solution HJ_trial(matrix(*ff)(matrix, matrix, matrix), solution XB, double s, ma
 {
 	try
 	{
-		//Tu wpisz kod funkcji
+		// Tu wpisz kod funkcji
 
 		return XB;
 	}
 	catch (string ex_info)
 	{
-		throw ("solution HJ_trial(...):\n" + ex_info);
+		throw("solution HJ_trial(...):\n" + ex_info);
 	}
 }
 
@@ -110,27 +109,28 @@ solution Rosen(matrix(*ff)(matrix, matrix, matrix), matrix x0, matrix s0, double
 	try
 	{
 		solution Xopt;
-		//Tu wpisz kod funkcji
+		// Tu wpisz kod funkcji
 
 		return Xopt;
 	}
 	catch (string ex_info)
 	{
-		throw ("solution Rosen(...):\n" + ex_info);
+		throw("solution Rosen(...):\n" + ex_info);
 	}
 }
 
 solution pen(matrix(*ff)(matrix, matrix, matrix), matrix x0, double c, double dc, double epsilon, int Nmax, matrix ud1, matrix ud2)
 {
-	try {
+	try
+	{
 		solution Xopt;
-		//Tu wpisz kod funkcji
+		// Tu wpisz kod funkcji
 
 		return Xopt;
 	}
 	catch (string ex_info)
 	{
-		throw ("solution pen(...):\n" + ex_info);
+		throw("solution pen(...):\n" + ex_info);
 	}
 }
 
@@ -139,13 +139,13 @@ solution sym_NM(matrix(*ff)(matrix, matrix, matrix), matrix x0, double s, double
 	try
 	{
 		solution Xopt;
-		//Tu wpisz kod funkcji
+		// Tu wpisz kod funkcji
 
 		return Xopt;
 	}
 	catch (string ex_info)
 	{
-		throw ("solution sym_NM(...):\n" + ex_info);
+		throw("solution sym_NM(...):\n" + ex_info);
 	}
 }
 
@@ -154,13 +154,13 @@ solution SD(matrix(*ff)(matrix, matrix, matrix), matrix(*gf)(matrix, matrix, mat
 	try
 	{
 		solution Xopt;
-		//Tu wpisz kod funkcji
+		// Tu wpisz kod funkcji
 
 		return Xopt;
 	}
 	catch (string ex_info)
 	{
-		throw ("solution SD(...):\n" + ex_info);
+		throw("solution SD(...):\n" + ex_info);
 	}
 }
 
@@ -169,13 +169,13 @@ solution CG(matrix(*ff)(matrix, matrix, matrix), matrix(*gf)(matrix, matrix, mat
 	try
 	{
 		solution Xopt;
-		//Tu wpisz kod funkcji
+		// Tu wpisz kod funkcji
 
 		return Xopt;
 	}
 	catch (string ex_info)
 	{
-		throw ("solution CG(...):\n" + ex_info);
+		throw("solution CG(...):\n" + ex_info);
 	}
 }
 
@@ -185,13 +185,13 @@ solution Newton(matrix(*ff)(matrix, matrix, matrix), matrix(*gf)(matrix, matrix,
 	try
 	{
 		solution Xopt;
-		//Tu wpisz kod funkcji
+		// Tu wpisz kod funkcji
 
 		return Xopt;
 	}
 	catch (string ex_info)
 	{
-		throw ("solution Newton(...):\n" + ex_info);
+		throw("solution Newton(...):\n" + ex_info);
 	}
 }
 
@@ -200,13 +200,13 @@ solution golden(matrix(*ff)(matrix, matrix, matrix), double a, double b, double 
 	try
 	{
 		solution Xopt;
-		//Tu wpisz kod funkcji
+		// Tu wpisz kod funkcji
 
 		return Xopt;
 	}
 	catch (string ex_info)
 	{
-		throw ("solution golden(...):\n" + ex_info);
+		throw("solution golden(...):\n" + ex_info);
 	}
 }
 
@@ -215,13 +215,13 @@ solution Powell(matrix(*ff)(matrix, matrix, matrix), matrix x0, double epsilon, 
 	try
 	{
 		solution Xopt;
-		//Tu wpisz kod funkcji
+		// Tu wpisz kod funkcji
 
 		return Xopt;
 	}
 	catch (string ex_info)
 	{
-		throw ("solution Powell(...):\n" + ex_info);
+		throw("solution Powell(...):\n" + ex_info);
 	}
 }
 
@@ -230,12 +230,12 @@ solution EA(matrix(*ff)(matrix, matrix, matrix), int N, matrix lb, matrix ub, in
 	try
 	{
 		solution Xopt;
-		//Tu wpisz kod funkcji
+		// Tu wpisz kod funkcji
 
 		return Xopt;
 	}
 	catch (string ex_info)
 	{
-		throw ("solution EA(...):\n" + ex_info);
+		throw("solution EA(...):\n" + ex_info);
 	}
 }

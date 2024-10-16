@@ -1,6 +1,6 @@
-//Ten plik nie powinien byæ edytowany
+// Ten plik nie powinien byï¿½ edytowany
 
-#include"ode_solver.h"
+#include "ode_solver.h"
 
 matrix* solve_ode(matrix(*diff)(double, matrix, matrix, matrix), double t0, double dt, double tend, matrix Y0, matrix ud1, matrix ud2)
 {
@@ -13,8 +13,8 @@ matrix* solve_ode(matrix(*diff)(double, matrix, matrix, matrix), double t0, doub
 		if (s[1] != 1)
 			throw string("matrix* solve_ode(...):\nwarunek poczatkowy musi byc wektorem pionowym");
 		int n = s[0];
-		delete[]s;
-		matrix* S = new matrix[2]{ matrix(N,1), matrix(n,N) };
+		delete[] s;
+		matrix* S = new matrix[2]{ matrix(N, 1), matrix(n, N) };
 		S[0](0) = t0;
 		for (int i = 0; i < n; ++i)
 			S[1](i, 0) = Y0(i);
@@ -34,6 +34,6 @@ matrix* solve_ode(matrix(*diff)(double, matrix, matrix, matrix), double t0, doub
 	}
 	catch (string ex_info)
 	{
-		throw ("matrix* solve_ode(...):\n" + ex_info);
+		throw("matrix* solve_ode(...):\n" + ex_info);
 	}
 }
