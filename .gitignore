@@ -1,5 +1,11 @@
+# CMake Files
+CMakeLists.txt
+*.cmake
+
 # Directories
 .vs/
+.idea/
+cmake-build-debug/
 Binaries/
 Numerical methods - Runtime/Res
 
