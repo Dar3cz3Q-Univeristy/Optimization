@@ -1,14 +1,14 @@
 /*********************************************
-Kod stanowi uzupe³nienie materia³ów do æwiczeñ
+Kod stanowi uzupeï¿½nienie materiaï¿½ï¿½w do ï¿½wiczeï¿½
 w ramach przedmiotu metody optymalizacji.
-Kod udostêpniony na licencji CC BY-SA 3.0
-Autor: dr in¿. £ukasz Sztangret
+Kod udostï¿½pniony na licencji CC BY-SA 3.0
+Autor: dr inï¿½. ï¿½ukasz Sztangret
 Katedra Informatyki Stosowanej i Modelowania
-Akademia Górniczo-Hutnicza
+Akademia Gï¿½rniczo-Hutnicza
 Data ostatniej modyfikacji: 19.09.2023
 *********************************************/
 
-#include"opt_alg.h"
+#include "opt_alg.h"
 
 void lab0();
 void lab1();
@@ -35,7 +35,7 @@ int main()
 
 void lab0()
 {
-	//Funkcja testowa
+	// Funkcja testowa
 	double epsilon = 1e-2;
 	int Nmax = 10000;
 	matrix lb(2, 1, -5), ub(2, 1, 5), a(2, 1);
@@ -46,7 +46,7 @@ void lab0()
 	cout << opt << endl << endl;
 	solution::clear_calls();
 
-	//Wahadlo
+	// Wahadlo
 	Nmax = 1000;
 	epsilon = 1e-2;
 	lb = 0;
@@ -56,8 +56,8 @@ void lab0()
 	cout << opt << endl << endl;
 	solution::clear_calls();
 
-	//Zapis symulacji do pliku csv
-	matrix Y0 = matrix(2, 1), MT = matrix(2, new double[2]{ m2d(opt.x),0.5 });
+	// Zapis symulacji do pliku csv
+	matrix Y0 = matrix(2, 1), MT = matrix(2, new double[2] { m2d(opt.x), 0.5 });
 	matrix* Y = solve_ode(df0, 0, 0.1, 10, Y0, NAN, MT);
 	ofstream Sout("../Results/symulacja_lab0.csv");
 	Sout << hcat(Y[0], Y[1]);
@@ -66,32 +66,14 @@ void lab0()
 	Y[1].~matrix();
 }
 
-void lab1()
-{
+void lab1() {}
 
-}
+void lab2() {}
 
-void lab2()
-{
+void lab3() {}
 
-}
+void lab4() {}
 
-void lab3()
-{
+void lab5() {}
 
-}
-
-void lab4()
-{
-
-}
-
-void lab5()
-{
-
-}
-
-void lab6()
-{
-
-}
+void lab6() {}

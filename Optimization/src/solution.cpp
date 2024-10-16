@@ -1,6 +1,6 @@
-//Ten plik nie powinien byæ edytowany
+// Ten plik nie powinien byï¿½ edytowany
 
-#include"solution.h"
+#include "solution.h"
 
 int solution::f_calls = 0;
 int solution::g_calls = 0;
@@ -46,7 +46,7 @@ solution::solution(int n, double* A)
 	}
 	catch (string ex_info)
 	{
-		throw ("solution::solution(int,double*):\n" + ex_info);
+		throw("solution::solution(int,double*):\n" + ex_info);
 	}
 }
 
@@ -85,7 +85,7 @@ matrix solution::fit_fun(matrix(*ff)(matrix, matrix, matrix), matrix ud1, matrix
 	}
 	catch (string ex_info)
 	{
-		throw ("matrix solution::fit_fun(...):\n" + ex_info);
+		throw("matrix solution::fit_fun(...):\n" + ex_info);
 	}
 }
 
@@ -99,7 +99,7 @@ matrix solution::grad(matrix(*gf)(matrix, matrix, matrix), matrix ud1, matrix ud
 	}
 	catch (string ex_info)
 	{
-		throw ("matrix solution::grad(...):\n" + ex_info);
+		throw("matrix solution::grad(...):\n" + ex_info);
 	}
 }
 
@@ -113,7 +113,7 @@ matrix solution::hess(matrix(*Hf)(matrix, matrix, matrix), matrix ud1, matrix ud
 	}
 	catch (string ex_info)
 	{
-		throw ("matrix solution::hess(...):\n" + ex_info);
+		throw("matrix solution::hess(...):\n" + ex_info);
 	}
 }
 
@@ -138,6 +138,6 @@ int get_dim(const solution& A)
 	}
 	catch (string ex_info)
 	{
-		throw ("int get_dim(const solution&):\n" + ex_info);
+		throw("int get_dim(const solution&):\n" + ex_info);
 	}
 }
