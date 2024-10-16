@@ -24,4 +24,7 @@ project "Optimization"
        runtime "Release"
        optimize "On"
        symbols "On"
+
+   filter "action:cmake"
+       defines { "USE_CLION" }
        
