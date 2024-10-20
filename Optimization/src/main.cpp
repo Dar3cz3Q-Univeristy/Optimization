@@ -22,7 +22,7 @@ int main()
 {
 	try
 	{
-		lab0();
+		lab1();
 	}
 	catch (string EX_INFO)
 	{
@@ -66,7 +66,15 @@ void lab0()
 	Y[1].~matrix();
 }
 
-void lab1() {}
+void lab1() 
+{
+	double epsilon = 1e-2;
+	int Nmax = 10000;
+
+	double* result = expansion(lab1_fun, -100, 1, 1.2, Nmax);
+
+	cout << result[0] << ", " << result[1] << "\n";
+}
 
 void lab2() {}
 
