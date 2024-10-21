@@ -45,6 +45,9 @@ double* expansion(matrix(*ff)(matrix, matrix, matrix), double x0, double d, doub
 		sx0.fit_fun(ff);
 		sx1.fit_fun(ff);
 
+		//cout << "f(" << m2d(sx0.x) << ") = " << m2d(sx0.y) << endl;
+		//cout << "f(" << m2d(sx1.x) << ") = " << m2d(sx1.y) << endl;
+
 		if (sx0.y == sx1.y)
 		{
 			p[0] = m2d(sx0.x);
@@ -68,18 +71,21 @@ double* expansion(matrix(*ff)(matrix, matrix, matrix), double x0, double d, doub
 		}
 		
 		solution sx2(x0 + d);
+		sx2.fit_fun(ff); //tego brakowalo, inaczej wychodzila wartosc sx2.y = -nan(ind)
 
 		do
 		{
 			if (sx0.f_calls > Nmax)
 				throw ("Przekroczono limit wywolan funkcji :)");
-
 			i++;
-			sx0 = sx1;
-			sx1 = sx2;
 
-			sx2 = m2d(sx0.x) + pow(alpha, i) * d;
-		} while (sx1.y > sx2.y);
+			sx0 = sx1;
+			sx1 = sx2; 
+
+			sx2.x = m2d(sx0.x) + pow(alpha, i) * d; 
+			sx2.fit_fun(ff);
+			//cout << m2d(sx1.y) << " > " << m2d(sx2.y) << " ? " << endl;
+		} while (m2d(sx1.y) > m2d(sx2.y)); //tu teraz porownuje przed m2d (przedtem brakowalo, tak jest bezpieczniej imo)
 
 		if (d > 0)
 		{

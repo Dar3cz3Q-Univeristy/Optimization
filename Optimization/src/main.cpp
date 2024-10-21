@@ -71,7 +71,8 @@ void lab1()
 	double epsilon = 1e-2;
 	int Nmax = 10000;
 
-	double* result = expansion(lab1_fun, -100, 1, 1.2, Nmax);
+	//double* result = expansion(lab1_fun, -100, 1, 1.01, Nmax); //to wypluje minimum lokalne, to po lewej
+	double* result = expansion(lab1_fun, 50, 1, 1.01, Nmax); //to wypluje minimum globalne, to po prawej
 
 	cout << result[0] << ", " << result[1] << "\n";
 }
