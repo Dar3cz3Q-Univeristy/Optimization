@@ -65,7 +65,15 @@ solution lag(matrix(*ff)(matrix, matrix, matrix), double a, double b, double eps
 	try
 	{
 		solution Xopt;
-		// Tu wpisz kod funkcji
+		
+		double ai = a;
+		double bi = b;
+		double ci = (a + b) / 2;
+
+		while (true)
+		{
+
+		}
 
 		return Xopt;
 	}
