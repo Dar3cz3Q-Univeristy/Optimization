@@ -1,5 +1,7 @@
 #include "opt_alg.h"
 
+#include "solution.h"
+
 solution MC(matrix(*ff)(matrix, matrix, matrix), int N, matrix lb, matrix ub, double epsilon, int Nmax, matrix ud1, matrix ud2)
 {
 	try
@@ -35,7 +37,66 @@ double* expansion(matrix(*ff)(matrix, matrix, matrix), double x0, double d, doub
 	try
 	{
 		double* p = new double[2] { 0, 0 };
-		// Tu wpisz kod funkcji
+
+		int i = 0;
+
+		solution sx0(x0), sx1(x0 + d);
+
+		sx0.fit_fun(ff);
+		sx1.fit_fun(ff);
+
+		//cout << "f(" << m2d(sx0.x) << ") = " << m2d(sx0.y) << endl;
+		//cout << "f(" << m2d(sx1.x) << ") = " << m2d(sx1.y) << endl;
+
+		if (sx0.y == sx1.y)
+		{
+			p[0] = m2d(sx0.x);
+			p[1] = m2d(sx0.y);
+
+			return p;
+		}
+		else if (sx1.y > sx0.y)
+		{
+			d = -d;
+
+			sx1 = sx0.x + d;
+
+			if (sx1.y >= sx0.y)
+			{
+				p[0] = m2d(sx1.x);
+				p[1] = m2d(sx0.x) - d;
+				
+				return p;
+			}
+		}
+		
+		solution sx2(x0 + d);
+		sx2.fit_fun(ff); //tego brakowalo, inaczej wychodzila wartosc sx2.y = -nan(ind)
+
+		do
+		{
+			if (sx0.f_calls > Nmax)
+				throw ("Przekroczono limit wywolan funkcji :)");
+			i++;
+
+			sx0 = sx1;
+			sx1 = sx2; 
+
+			sx2.x = m2d(sx0.x) + pow(alpha, i) * d; 
+			sx2.fit_fun(ff);
+			//cout << m2d(sx1.y) << " > " << m2d(sx2.y) << " ? " << endl;
+		} while (m2d(sx1.y) > m2d(sx2.y)); //tu teraz porownuje przed m2d (przedtem brakowalo, tak jest bezpieczniej imo)
+
+		if (d > 0)
+		{
+			p[0] = m2d(sx0.x);
+			p[1] = m2d(sx2.x);
+
+			return p;
+		}
+
+		p[0] = m2d(sx2.x);
+		p[1] = m2d(sx0.x);
 
 		return p;
 	}
